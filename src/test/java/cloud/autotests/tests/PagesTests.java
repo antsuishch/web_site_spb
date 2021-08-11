@@ -1,18 +1,17 @@
 package cloud.autotests.tests;
 
-import cloud.autotests.tests.TestBase;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-
 import static io.qameta.allure.Allure.step;
 
-
-public class PageObjects extends TestBase {
+@DisplayName("Тесты для сайта spb.tele2")
+public class PagesTests extends TestBase {
     //  Locators an methods for Main Page
-    static class MainPage {
         String openPageMain = "https://spb.tele2.ru/",
                 cartridgeTariffLocator = "//*[@id=\"root\"]//header/section[2]//li[1]",
                 textTariffLocator = "//*[@id=\"root\"]//div//div[2]/h1[1]",
@@ -30,6 +29,8 @@ public class PageObjects extends TestBase {
                 buttonNoLocator = "//*[@id=\"simNumberSelectionPopup\"]//div[2]/a",
                 textDownLocator = ".gray-text";
 
+        @DisplayName("Переход на страницу тариф")
+        @Test
         public void mainPageTariff() {
             step("Открываем страницу с тарифом", () -> {
                 open(openPageMain);
@@ -43,6 +44,8 @@ public class PageObjects extends TestBase {
             });
         }
 
+        @DisplayName("Проверка страницы поиска")
+        @Test
         public void checkFind() {
             step("Открываем главную страницу", () -> {
                 open(openPageMain);
@@ -61,6 +64,8 @@ public class PageObjects extends TestBase {
             });
         }
 
+        @DisplayName("Отображение попапа")
+        @Test
         public void popupTariff() {
             step("Открываем главную страницу", () -> {
                 open(openPageMain);
@@ -81,11 +86,8 @@ public class PageObjects extends TestBase {
                 $(textDownLocator).shouldHave(text("Вы можете купить несколько объединенных в группу SIM-карт, чтобы получать скидку за тариф. Или приобрести сейчас одну SIM-карту и собрать группу со скидкой позднее."));
             });
         }
-    }
 
     // Locators an methods for Tariff Page
-    static class TariffPage {
-
         String openPageTariff = "https://spb.tele2.ru/connectTariff",
                 textLocators = "Перейти в Tele2",
                 connectLocators = ".connect-header",
@@ -94,9 +96,11 @@ public class PageObjects extends TestBase {
                 cartridgeBaseLocator = ".connect-tariff__inner",
                 radioButtonEsimLocator = "eSIM",
                 moreDetailsLocator = ".sim-type-selector__esim-info-btn",
-                popupContentLocator = ".popup-inner",
+                popupLocator = ".popup-inner",
                 popupButtonLocator = "Понятно";
 
+        @DisplayName("Страница переноса номера")
+        @Test
         public void inputNumber() {
             step("Открываем страницу переноса номера", () -> {
                 open(openPageTariff);
@@ -112,6 +116,8 @@ public class PageObjects extends TestBase {
 
         }
 
+        @DisplayName("Переклчючение кнопок и появление popup")
+        @Test
         public void checkRadioButton() {
             step("Открываем страницу переноса номера", () -> {
                 open(openPageTariff);
@@ -124,9 +130,8 @@ public class PageObjects extends TestBase {
                 $(moreDetailsLocator).click();
             });
             step("Проверяем что появился popup", () -> {
-                $(popupContentLocator).shouldBe(visible);
+                $(popupLocator).shouldBe(visible);
                 $(byText(popupButtonLocator)).click();
             });
         }
-    }
 }
