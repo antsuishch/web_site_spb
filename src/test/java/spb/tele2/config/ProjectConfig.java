@@ -1,4 +1,4 @@
-package cloud.autotests.config;
+package spb.tele2.config;
 
 import org.aeonbits.owner.Config;
 

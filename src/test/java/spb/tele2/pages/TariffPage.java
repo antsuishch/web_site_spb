@@ -1,7 +1,4 @@
-package cloud.autotests.tests.pages;
-
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+package spb.tele2.pages;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -11,6 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class TariffPage {
+    //  Locators an methods for Tariff Page
     String openPageTariff = "https://spb.tele2.ru/connectTariff",
             textLocators = "Перейти в Tele2",
             connectLocators = ".connect-header",

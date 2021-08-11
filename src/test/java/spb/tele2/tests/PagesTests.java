@@ -1,7 +1,7 @@
-package cloud.autotests.tests;
+package spb.tele2.tests;
 
-import cloud.autotests.tests.pages.MainPage;
-import cloud.autotests.tests.pages.TariffPage;
+import spb.tele2.pages.MainPage;
+import spb.tele2.pages.TariffPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +11,7 @@ public class PagesTests extends TestBase {
 
     MainPage mainPage = new MainPage();
     TariffPage tariffPage = new TariffPage();
+
 
     @DisplayName("Переход на страницу тариф")
     @Test

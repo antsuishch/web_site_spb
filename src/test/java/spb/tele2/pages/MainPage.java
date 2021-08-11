@@ -1,7 +1,4 @@
-package cloud.autotests.tests.pages;
-
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+package spb.tele2.pages;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -82,4 +79,6 @@ public class MainPage {
             $(textDownLocator).shouldHave(text("Вы можете купить несколько объединенных в группу SIM-карт, чтобы получать скидку за тариф. Или приобрести сейчас одну SIM-карту и собрать группу со скидкой позднее."));
         });
     }
+
+
 }
