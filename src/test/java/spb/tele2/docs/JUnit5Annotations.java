@@ -1,4 +1,4 @@
-package cloud.autotests.docs;
+package spb.tele2.docs;
 
 import org.junit.jupiter.api.*;
 
