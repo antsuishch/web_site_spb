@@ -18,7 +18,7 @@ public class WebConnectTariffSteps {
             radioButtonEsimLocator = "eSIM",
             moreDetailsLocator = ".sim-type-selector__esim-info-btn",
             popupLocator = ".popup-inner",
-            popupButtonLocator = "Понятно";
+            popupButtonLocator = "a.btn";
 
     @Step("Открываем страницу Перейти в теле2")
     public void openConnectTariffPage() {
