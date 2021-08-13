@@ -1,4 +1,4 @@
-# Проект Automation UI тестов для сайта (https://spb.tele2.ru)
+# Автотесты для сайта https://spb.tele2.ru
 ![tele2.spb](https://github.com/antsuishch/data_repository/blob/master/resources/screentest/tele2pagemain.PNG?raw=true)
 ## Используемый стек:
 ![java](https://github.com/antsuishch/data_repository/blob/master/resources/icons/Java.png?raw=true "Java")
