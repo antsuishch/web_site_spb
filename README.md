@@ -32,6 +32,7 @@ Dashboards:
 ![ops](https://github.com/antsuishch/data_repository/blob/master/resources/screentest/testops.png?raw=true)
 
 Пример запуска теста в Selenoid:
+
 ![video](https://github.com/antsuishch/data_repository/blob/master/resources/gif/a098cf6c21c1beef.gif?raw=true)
 
 ##  Запуск тестов происходит в 2 потока
