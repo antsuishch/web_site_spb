@@ -1,7 +1,6 @@
 package spb.tele2.steps;
 
 import io.qameta.allure.Step;
-import spb.tele2.pages.ConnectTariffPage;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -10,50 +9,59 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class WebConnectTariffSteps {
 
-    private ConnectTariffPage connectTariffPage = new ConnectTariffPage();
+    private static final String
+            openConnectPageTariff = "https://spb.tele2.ru/connectTariff",
+            connectLocators = ".connect-header",
+            valueLocator = "#mnpNumber",
+            errorTextLocator = ".error-text",
+            cartridgeBaseLocator = ".connect-tariff__inner",
+            radioButtonEsimLocator = "eSIM",
+            moreDetailsLocator = ".sim-type-selector__esim-info-btn",
+            popupLocator = ".popup-inner",
+            popupButtonLocator = "Понятно";
 
     @Step("Открываем страницу Перейти в теле2")
     public void openConnectTariffPage() {
-        open(connectTariffPage.openConnectPageTariff);
+        open(openConnectPageTariff);
     }
 
     @Step("Проверям текст в хедере")
     public void checkHeaderConnectTariffPage() {
-        $(connectTariffPage.connectLocators).shouldHave(text("Переход со своим номером"));
+        $(connectLocators).shouldHave(text("Переход со своим номером"));
     }
 
     @Step("Вводим некорректный номер телефона")
     public void inputIncorrectNumberPhone() {
-        $(connectTariffPage.valueLocator).setValue(" 8005553535 ");
+        $(valueLocator).setValue(" 8005553535 ");
     }
 
     @Step("Проверяем появление текста об ошибке")
     public void checkTextError() {
-        $(connectTariffPage.errorTextLocator).shouldHave(visible);
+        $(errorTextLocator).shouldHave(visible);
     }
 
     @Step("Скролл до появление radiobutton")
     public void scrollToRadioButtons() {
-        $(connectTariffPage.cartridgeBaseLocator).scrollTo();
+        $(cartridgeBaseLocator).scrollTo();
     }
 
     @Step("Клик по eSim")
     public void clickRadioButtonEsim() {
-        $(byText(connectTariffPage.radioButtonEsimLocator)).click();
+        $(byText(radioButtonEsimLocator)).click();
     }
 
     @Step("Клик по \"Подробнее\"")
     public void clickMoreDetails() {
-        $(connectTariffPage.moreDetailsLocator).click();
+        $(moreDetailsLocator).click();
     }
 
     @Step("Проверка появления popup после нажатия \"Подробнее\"")
     public void checkViewPopupAfterClickMore() {
-        $(connectTariffPage.popupLocator).shouldBe(visible);
+        $(popupLocator).shouldBe(visible);
     }
 
     @Step("Проверка текста popup после нажатия \"Подробнее\"")
     public void checkTextPopupAfterClickMore() {
-        $(byText(connectTariffPage.popupButtonLocator)).click();
+        $(popupButtonLocator).click();
     }
 }
