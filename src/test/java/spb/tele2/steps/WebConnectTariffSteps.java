@@ -14,7 +14,6 @@ public class WebConnectTariffSteps {
             connectLocators = ".connect-header",
             valueLocator = "#mnpNumber",
             errorTextLocator = ".error-text",
-            cartridgeBaseLocator = ".connect-tariff__inner",
             radioButtonEsimLocator = "eSIM",
             moreDetailsLocator = ".sim-type-selector__esim-info-btn",
             popupLocator = ".popup-inner",
@@ -42,7 +41,7 @@ public class WebConnectTariffSteps {
 
     @Step("Скролл до появление radiobutton")
     public void scrollToRadioButtons() {
-        $(cartridgeBaseLocator).scrollTo();
+        $(moreDetailsLocator).scrollTo();
     }
 
     @Step("Клик по eSim")
