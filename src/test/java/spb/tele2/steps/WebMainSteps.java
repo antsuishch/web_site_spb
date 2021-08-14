@@ -10,8 +10,8 @@ public class WebMainSteps {
 
     private static final String
             openPageMain = "https://spb.tele2.ru/",
-            cartridgeTariffLocator = "//*[@id=\"root\"]//header/section[2]//li[1]",
-            textTariffLocator = "//*[@id=\"root\"]//div//div[2]/h1[1]",
+            cartridgeTariffLocator = "*//header/section[2]//li[1]",
+            textTariffLocator = ".space-holder36.tariffs-group-name",
             detailTariffLocator = ".tariffs-detailed-list",
             iconFindLocator = ".ico.icon-search",
             searchTextLocator = "#search-text",
@@ -24,7 +24,8 @@ public class WebMainSteps {
             buttonYesLocator = ".btn.btn-black.line-sale2__btn",
             buttonNoLocator = "//*[@id=\"simNumberSelectionPopup\"]//div[2]/a",
             textDownLocator = ".gray-text",
-            tariffCartridgesLocator = "div.tariff-cards.visible-lg";
+            everWhereCartridgeLocator = ".tariff-card.tariff-card_squized.cinema",
+            tariffCartridgesLocator = ".tariff-cards.visible-lg";
 
     @Step("Открываем главную страницу")
     public void openMainPage() {
@@ -38,7 +39,7 @@ public class WebMainSteps {
 
     @Step("Проверяем что на странице есть текст")
     public void checkText() {
-        $x(textTariffLocator).shouldHave(text("Тарифы для смартфонов"));
+        $(textTariffLocator).shouldHave(text("Тарифы для смартфонов"));
     }
 
     @Step("Проверяем отображение картриджей")
@@ -70,6 +71,7 @@ public class WebMainSteps {
     public void scrollToElementsAndClick() {
         $(buttonTariffLocator).scrollTo().click();
     }
+
     @Step("Скролл до карточек тарифа")
     public void scrollToCartridgeTariffs() {
         $(tariffCartridgesLocator).scrollTo();
@@ -92,6 +94,11 @@ public class WebMainSteps {
         $(buttonYesLocator).shouldHave(text("Да, все верно"));
         $x(buttonNoLocator).shouldHave(text("Нет, нужна 1 SIM"));
         $(textDownLocator).shouldHave(text("Вы можете купить несколько объединенных в группу SIM-карт, чтобы получать скидку за тариф. Или приобрести сейчас одну SIM-карту и собрать группу со скидкой позднее."));
+    }
+
+    @Step("Карточка тарифа \"Везде онлайн\" отображается")
+    public void everWhereOnline() {
+        $(everWhereCartridgeLocator).shouldBe(visible);
     }
 
 }

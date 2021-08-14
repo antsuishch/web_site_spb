@@ -46,6 +46,14 @@ public class PageTests extends TestBase {
         mainSteps.visibleCartridgesTariff();
     }
 
+    @DisplayName("Отображение карточки тарифа \"Везде онлайн\"")
+    @Test
+    void tariffCardsEverWhereOnline() {
+        mainSteps.openMainPage();
+        mainSteps.scrollToCartridgeTariffs();
+        mainSteps.everWhereOnline();
+    }
+
     final WebConnectTariffSteps webConnectTariffSteps = new WebConnectTariffSteps();
 
     @DisplayName("Проверка на появление текста об ошибке при вводе некорректного номера")
