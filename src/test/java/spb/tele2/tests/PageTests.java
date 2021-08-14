@@ -38,6 +38,14 @@ public class PageTests extends TestBase {
         mainSteps.checkTextPopup();
     }
 
+    @DisplayName("Общее отображение карточек тарифа")
+    @Test
+    void tariffCards() {
+        mainSteps.openMainPage();
+        mainSteps.scrollToCartridgeTariffs();
+        mainSteps.visibleCartridgesTariff();
+    }
+
     final WebConnectTariffSteps webConnectTariffSteps = new WebConnectTariffSteps();
 
     @DisplayName("Проверка на появление текста об ошибке при вводе некорректного номера")

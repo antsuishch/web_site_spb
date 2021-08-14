@@ -23,7 +23,8 @@ public class WebMainSteps {
             popupContentLocator = ".popup-content",
             buttonYesLocator = ".btn.btn-black.line-sale2__btn",
             buttonNoLocator = "//*[@id=\"simNumberSelectionPopup\"]//div[2]/a",
-            textDownLocator = ".gray-text";
+            textDownLocator = ".gray-text",
+            tariffCartridgesLocator = "div.tariff-cards.visible-lg";
 
     @Step("Открываем главную страницу")
     public void openMainPage() {
@@ -68,6 +69,15 @@ public class WebMainSteps {
     @Step("Скролл до элемента и клик по нему")
     public void scrollToElementsAndClick() {
         $(buttonTariffLocator).scrollTo().click();
+    }
+    @Step("Скролл до карточек тарифа")
+    public void scrollToCartridgeTariffs() {
+        $(tariffCartridgesLocator).scrollTo();
+    }
+
+    @Step("Карточки тарифа отображаются")
+    public void visibleCartridgesTariff() {
+        $(tariffCartridgesLocator).shouldBe(visible);
     }
 
     @Step("Проверяем появление popup")
