@@ -54,6 +54,22 @@ public class PageTests extends TestBase {
         mainSteps.everWhereOnline();
     }
 
+    @DisplayName("Отображение карточки тарифа \"Мой онлайн +\"")
+    @Test
+    void tariffCardsMyOnline() {
+        mainSteps.openMainPage();
+        mainSteps.scrollToCartridgeTariffs();
+        mainSteps.myOnlinePlus();
+    }
+
+    @DisplayName("Отображение карточки тарифа \"Настройте свой \"")
+    @Test
+    void constructorCards() {
+        mainSteps.openMainPage();
+        mainSteps.scrollToCartridgeTariffs();
+        mainSteps.constructorCartridge();
+    }
+
     final WebConnectTariffSteps webConnectTariffSteps = new WebConnectTariffSteps();
 
     @DisplayName("Проверка на появление текста об ошибке при вводе некорректного номера")

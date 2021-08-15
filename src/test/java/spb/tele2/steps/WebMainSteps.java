@@ -25,6 +25,8 @@ public class WebMainSteps {
             buttonNoLocator = "//*[@id=\"simNumberSelectionPopup\"]//div[2]/a",
             textDownLocator = ".gray-text",
             everWhereCartridgeLocator = ".tariff-card.tariff-card_squized.cinema",
+            myOnlinePlusCartridgeLocator = ".tariff-card.tariff-card_squized",
+            constructorCartridgeLocator = ".tariff-card.tariff-card-constructor.tariff-card_squized",
             tariffCartridgesLocator = ".tariff-cards.visible-lg";
 
     @Step("Открываем главную страницу")
@@ -101,4 +103,13 @@ public class WebMainSteps {
         $(everWhereCartridgeLocator).shouldBe(visible);
     }
 
+    @Step("Карточка тарифа \"Мой онлайн +\" отображается")
+    public void myOnlinePlus() {
+        $(myOnlinePlusCartridgeLocator).shouldBe(visible);
+    }
+
+    @Step("Карточка тарифа \"Мой онлайн\" отображается")
+    public void constructorCartridge() {
+        $(constructorCartridgeLocator).shouldBe(visible);
+    }
 }
