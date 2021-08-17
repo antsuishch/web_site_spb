@@ -16,20 +16,20 @@ Java, Gradle, JUnit5, Selenide, Jenkins, Selenoid, Allure Reports, Telegram (у�
 
 Пример общего отчета о прохождении тестов:
 
-![allure-reports](https://github.com/antsuishch/data_repository/blob/master/resources/screentest/allure.png?raw=true)
+![allure-reports](https://github.com/antsuishch/data_repository/blob/master/resources/newscreen/mainallure.png?raw=true)
 
 Пример подробного отчета:
 
-![allure](https://github.com/antsuishch/data_repository/blob/master/resources/screentest/testexample.png?raw=true)
+![allure](https://github.com/antsuishch/data_repository/blob/master/resources/newscreen/suite.png?raw=true)
 
 ## Также присутствует интеграция с системой тест-менеджмента Allure TestOps
 Dashboards:
 
-![alluretestops](https://github.com/antsuishch/data_repository/blob/master/resources/screentest/dashboard.PNG?raw=true)
+![alluretestops](https://github.com/antsuishch/data_repository/blob/master/resources/newscreen/dashboardbase.png?raw=true)
 
 Пример ручных и автоматизированных тестов в Allure TestOps:
 
-![ops](https://github.com/antsuishch/data_repository/blob/master/resources/screentest/testops.png?raw=true)
+![ops](https://github.com/antsuishch/data_repository/blob/master/resources/newscreen/testopscases.png?raw=true)
 
 Пример запуска теста в Selenoid:
 
@@ -38,10 +38,10 @@ Dashboards:
 ##  Запуск тестов происходит в 2 потока
 
 Количество потоков задается при запуске тестов
-![threads](https://github.com/antsuishch/data_repository/blob/master/resources/screentest/thread.png?raw=true)
+![threads](https://github.com/antsuishch/data_repository/blob/master/resources/newscreen/threads.png?raw=true)
 
 ## Уведомление о результате прогона отправляется чат-ботом в Telegram:
-![bot](https://github.com/antsuishch/data_repository/blob/master/resources/screentest/img.png?raw=true)
+![bot](https://github.com/antsuishch/data_repository/blob/master/resources/newscreen/telegram.jpg?raw=true)
 
 ## Пример запуска
 Для удаленного запуска необходимо заполнить файл remote.properties или передать параметры в командной строке:
