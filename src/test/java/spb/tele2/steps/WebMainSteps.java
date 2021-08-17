@@ -10,8 +10,8 @@ public class WebMainSteps {
 
     private static final String
             openPageMain = "https://spb.tele2.ru/",
-            cartridgeTariffLocator = "//*[@id=\"root\"]//header/section[2]//li[1]",
-            textTariffLocator = "//*[@id=\"root\"]//div//div[2]/h1[1]",
+            cartridgeTariffLocator = "*//header/section[2]//li[1]",
+            textTariffLocator = ".space-holder36.tariffs-group-name",
             detailTariffLocator = ".tariffs-detailed-list",
             iconFindLocator = ".ico.icon-search",
             searchTextLocator = "#search-text",
@@ -23,7 +23,11 @@ public class WebMainSteps {
             popupContentLocator = ".popup-content",
             buttonYesLocator = ".btn.btn-black.line-sale2__btn",
             buttonNoLocator = "//*[@id=\"simNumberSelectionPopup\"]//div[2]/a",
-            textDownLocator = ".gray-text";
+            textDownLocator = ".gray-text",
+            everWhereCartridgeLocator = ".tariff-card.tariff-card_squized.cinema",
+            myOnlinePlusCartridgeLocator = ".tariff-card.tariff-card_squized",
+            constructorCartridgeLocator = ".tariff-card.tariff-card-constructor.tariff-card_squized",
+            tariffCartridgesLocator = ".tariff-cards.visible-lg";
 
     @Step("Открываем главную страницу")
     public void openMainPage() {
@@ -37,7 +41,7 @@ public class WebMainSteps {
 
     @Step("Проверяем что на странице есть текст")
     public void checkText() {
-        $x(textTariffLocator).shouldHave(text("Тарифы для смартфонов"));
+        $(textTariffLocator).shouldHave(text("Тарифы для смартфонов"));
     }
 
     @Step("Проверяем отображение картриджей")
@@ -70,6 +74,16 @@ public class WebMainSteps {
         $(buttonTariffLocator).scrollTo().click();
     }
 
+    @Step("Скролл до карточек тарифа")
+    public void scrollToCartridgeTariffs() {
+        $(tariffCartridgesLocator).scrollTo();
+    }
+
+    @Step("Карточки тарифа отображаются")
+    public void visibleCartridgesTariff() {
+        $(tariffCartridgesLocator).shouldBe(visible);
+    }
+
     @Step("Проверяем появление popup")
     public void checkViewPopup() {
         $(infoModalLocator).shouldBe(visible);
@@ -84,4 +98,18 @@ public class WebMainSteps {
         $(textDownLocator).shouldHave(text("Вы можете купить несколько объединенных в группу SIM-карт, чтобы получать скидку за тариф. Или приобрести сейчас одну SIM-карту и собрать группу со скидкой позднее."));
     }
 
+    @Step("Карточка тарифа \"Везде онлайн\" отображается")
+    public void everWhereOnline() {
+        $(everWhereCartridgeLocator).shouldBe(visible);
+    }
+
+    @Step("Карточка тарифа \"Мой онлайн +\" отображается")
+    public void myOnlinePlus() {
+        $(myOnlinePlusCartridgeLocator).shouldBe(visible);
+    }
+
+    @Step("Карточка тарифа \"Мой онлайн\" отображается")
+    public void constructorCartridge() {
+        $(constructorCartridgeLocator).shouldBe(visible);
+    }
 }
