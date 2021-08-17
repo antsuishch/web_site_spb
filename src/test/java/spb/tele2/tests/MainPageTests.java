@@ -2,13 +2,12 @@ package spb.tele2.tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import spb.tele2.steps.WebConnectTariffSteps;
 import spb.tele2.steps.WebMainSteps;
 
-@DisplayName("Тесты для сайта spb.tele2")
-public class PageTests extends TestBase {
+@DisplayName("Тесты для главной страницы сайта spb.tele2")
+public class MainPageTests extends TestBase {
 
-    final WebMainSteps mainSteps = new WebMainSteps();
+    final static WebMainSteps mainSteps = new WebMainSteps();
 
     @DisplayName("Переход на страницу Тарифы")
     @Test
@@ -68,27 +67,5 @@ public class PageTests extends TestBase {
         mainSteps.openMainPage();
         mainSteps.scrollToCartridgeTariffs();
         mainSteps.constructorCartridge();
-    }
-
-    final WebConnectTariffSteps webConnectTariffSteps = new WebConnectTariffSteps();
-
-    @DisplayName("Проверка на появление текста об ошибке при вводе некорректного номера")
-    @Test
-    void incorrectNumberErrorText() {
-        webConnectTariffSteps.openConnectTariffPage();
-        webConnectTariffSteps.checkHeaderConnectTariffPage();
-        webConnectTariffSteps.inputIncorrectNumberPhone();
-        webConnectTariffSteps.checkTextError();
-    }
-
-    @DisplayName("Проверка кнопок на странице")
-    @Test
-    void checkButtonConnectTariffPage() {
-        webConnectTariffSteps.openConnectTariffPage();
-        webConnectTariffSteps.scrollToRadioButtons();
-        webConnectTariffSteps.clickRadioButtonEsim();
-        webConnectTariffSteps.clickMoreDetails();
-        webConnectTariffSteps.checkViewPopupAfterClickMore();
-        webConnectTariffSteps.checkTextPopupAfterClickMore();
     }
 }
